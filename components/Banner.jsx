@@ -5,9 +5,12 @@ const Banner = () => {
   return (
     <div className="flex justify-between items-center bg-gray-950">
       <div className="flex flex-row  justify-center items-center">
-        <div className="flex flex-col md:flex-row ">
+
+        <div className="flex flex-col mdl:flex-row ">
+
+         {/*bloque1 */}
           <div className="flex flex-row">
-            <div className=" flex justify-center items-center">
+            <div className=" flex  justify-start    md:justify-center items-start">
               <div className="md:hidden xl:flex flex-row">
                 <img
                   src="/assets/muscle1.png"
@@ -16,9 +19,9 @@ const Banner = () => {
                 />
               </div>
             </div>
-
-            <div className="flex flex-col justify-center items-center px-6 md:px-3 pl-2">
-              <h1 className="hidden md:flex text-white font-titleFont text-2xl md:text-4xl text-center font-bold">
+             {/*bloque2 */}
+            <div className="flex flex-col justify-center items-center px-1 md:px-3 pl-2 pt-12 md:pt-20  lg:pt-0 pb-28">
+              <h1 className="hidden md:flex text-white font-titleFont text-2xl md:text-4xl text-center font-bold px-2 md:px-8 lg:px-10">
                 ¡No te pierdas este super descuento!
               </h1>
 
@@ -31,22 +34,23 @@ const Banner = () => {
                 width={456}
                 height={200}
               />
-              <p className="text-white font-bodyFont text-sm md:text-2xl text-center font-semibold">
-                Ven tenemos al mejor staff <br /> para desarrollar todo tu
-                potencial
+              <p className="text-white font-bodyFont text-sm md:text-1xl text-center font-semibold px-0  lg:mdl:px-20  mx-14  md:mx-20">
+              Alcanza tu maximo "prime" este invierno <br />
               </p>
               <p className="hidden md:flex text-white text-base md:text-1xl text-center">
-                Alcanza tu maximo "prime" este invierno
+               
+                Ven tenemos al mejor staff 
                 <br />
               </p>
             </div>
           </div>
-
+           {/*bloque3 */}
           <div className=" justify-center items-center  hidden md:flex  ">
             <div className="justify-center items-center ">
               <Formulary />
             </div>
           </div>
+
         </div>
       </div>
     </div>

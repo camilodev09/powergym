@@ -4,11 +4,11 @@ import { FaPhone, FaUser } from "react-icons/fa";
 
 const Nav = () => {
   return (
-    <div className="bg-gray-950 flex justify-between md:px-10 h-14 sticky top-0 z-50  w-full mx-auto  ">
+    <div className="bg-gray-950 flex justify-between md:px-10 h-18 sticky top-0 z-50  w-full mx-auto  ">
       <div className="">
         <Link href={"/"}>
           <Image
-            src="/assets/logoletratrue.png"
+            src="/assets/logoletratrue22.svg"
             alt="My Image"
             width={200}
             height={100}
@@ -16,8 +16,8 @@ const Nav = () => {
           />
         </Link>
       </div>
-      <div className="flex gap-1 p-4">
-        <Link href={"/Contact"} className=" ">
+      <div className="flex gap-3 p-4">
+        <Link href="tel:+51966301171">
           <span>
             <FaPhone
               size={32}
@@ -25,7 +25,7 @@ const Nav = () => {
             />
           </span>
         </Link>
-        <Link href={"/Store"} className="  px-3">
+        <Link href="mailto:creazone.contact@contacto.com?subject=Asunto%20del%20correo px-4">
           <span>
             <FaUser
               size={32}

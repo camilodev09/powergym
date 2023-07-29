@@ -73,7 +73,7 @@ const Formulary = () => {
               name="username"
               className={`${
                 errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100 rounded-md`}
+              } bg-gray-100 rounded-md py-2`}
               type="text"
               required
             />
@@ -89,7 +89,7 @@ const Formulary = () => {
               name="lastname"
               className={`${
                 errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100 rounded-md`}
+              } bg-gray-100 rounded-md py-2 `}
               type="text"
               required
             />
@@ -107,7 +107,7 @@ const Formulary = () => {
             name="phonenumber"
             className={`${
               errMsg === "Phone number is required!" && "outline-designColor"
-            } bg-gray-100 rounded-md`}
+            } bg-gray-100 rounded-md py-2`}
             type="text"
             required
           />
@@ -124,7 +124,7 @@ const Formulary = () => {
             name="email"
             className={`${
               errMsg === "Please give your Email!" && "outline-moradito"
-            } bg-gray-100 rounded-md`}
+            } bg-gray-100 rounded-md py-2`}
             type="email"
             required
           />
@@ -135,7 +135,7 @@ const Formulary = () => {
             name="message"
             className={`${
               errMsg === "Message is required!" && "outline-lightText"
-            } bg-gray-100 rounded-md`}
+            } bg-gray-100 rounded-md py-2`}
             cols="30"
             rows="2"
           ></textarea>

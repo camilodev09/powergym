@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <div className="bg-white pt-80 md:pt-14 mt-40 md:mt-10">
+    <div className="bg-white pt-80 md:pt-14 mt-40 md:mt-20 pb-20 md:pb-40">
       <h2 className="flex font-titleFont text-3xl md:text-4xl lg:text-4xl font-semibold md:font-bold text-gray-800 justify-center items-center text-center p-3 gap-1 md:mx-20 lgl:mx-16">
         ¿Buscas un lugar para mejorar tu salud y estado físico?
       </h2>
@@ -10,7 +10,7 @@ const Services = () => {
         ¡No busques más!
       </h3>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 p-6 lg:px-40 xl:px-0 md:pt-20 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 p-6 lg:px-40 xl:px-0 pt-20 md:pt-40 gap-6">
         <div className="grid ">
           <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-5 lgl:pt-3 rounded-md">
             <div className=" h-[230px]  flex  ">

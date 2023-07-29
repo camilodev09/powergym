@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { testim1, testim2, testim3 } from "@/public/assets";
+
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -19,7 +19,7 @@ const Carrousel = () => {
   const [dotActive, setDocActive] = useState(0);
 
   const settings = {
-    dots: true,
+    dots:false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -109,8 +109,8 @@ const Carrousel = () => {
   };
 
   return (
-    <div className="pt-16">
-      <h1 className="text-2xl md:text-4xl bg-black text-white py-5 font-titleFont  w-30 md:w-100 text-center rounded-sm p-1 md:p-7 ">
+    <div className="pt-16  pb-12 md:pb-40 bg-gray-50">
+      <h1 className="text-2xl md:text-4xl  text-gray-800 py-5 font-titleFont font-extrabold  w-30 md:w-100 text-center rounded-sm p-1 md:p-7 pb-10 mb-10">
         ¡Ellos ya comenzarón a lograr sus objetivos!
       </h1>
       <Slider {...settings} className="pt-8 ">

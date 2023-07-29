@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Form from "@/components/Form";
 
 import Services from "@/components/Services";
+import UseGym from "@/components/UseGym";
 
 import { Inter } from "next/font/google";
 
@@ -15,8 +16,8 @@ export default function Home() {
       <Banner />
       <Form />
       <Services />
-
       <Carrousel />
+      <UseGym/>
       <Footer />
     </main>
   );

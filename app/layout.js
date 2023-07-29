@@ -2,6 +2,8 @@ import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Nav from "@/components/Nav";
+import WhatsAppLink from "@/components/WhatsAppLink";
+
 
 export const metadata = {
   title: "Create Next App",
@@ -13,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="w-full h-auto scrollbar-hide">
         <Nav />
+        <WhatsAppLink/>
         {children}
       </body>
     </html>
