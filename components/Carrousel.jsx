@@ -109,7 +109,7 @@ const Carrousel = () => {
   };
 
   return (
-    <div className="pt-16  pb-12 md:pb-40 bg-gray-50">
+    <div className="pt-16  pb-12 md:pb-40 bg-gray-50  lg:px-20">
       <h1 className="text-2xl md:text-4xl  text-gray-800 py-5 font-titleFont font-extrabold  w-30 md:w-100 text-center rounded-sm p-1 md:p-7 pb-10 mb-10">
         ¡Ellos ya comenzarón a lograr sus objetivos!
       </h1>

@@ -18,7 +18,7 @@ const Footer = () => {
             <p class="text-gray-400">contacto@creazone.pe</p>
             <p class="text-gray-400">Copyright © 2023</p>
           </span>
-          <div className="flex gap-4  pt-5 px-8 mb-10">
+          <div className="flex gap-4  pt-5  mb-10">
             
 
             <Link href='https://www.facebook.com/profile.php?id=100065758831949' >
@@ -47,21 +47,21 @@ const Footer = () => {
             Acerca de POWERGYM
           </h3>
           <hr />
-          <ul className="  flex flex-col gap-4 font-titleFont font-medium py-0  overflow-hidden py-30">
+          <ul className="  flex flex-col gap-4 font-titleFont font-medium  py-0  overflow-hidden py-30">
             <li>
-              <span className="w-full text-sm md:text-lg relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full text-sm md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
                 Necesito mas información
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
             </li>
             <li>
-              <span className="w-full text-sm md:text-lg relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full text-sm md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
                 ¿Necesito una membresía Premium?
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
             </li>
             <li>
-              <span className="w-full text-sm md:text-lg  relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full text-sm md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
                 ¿Necesitas el servicio completo?
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
