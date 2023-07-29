@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Nav from "@/components/Nav";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import Head from 'next/head';
-import favicon from "@/public/assets/favicon.svg"
+import favicon from "@/public/assets/favicon.ico"
 
 export const metadata = {
   title: 'PowerGym',
