@@ -13,7 +13,7 @@ const Footer = () => {
             alt="imgSlider3"
           />
           <span class="px-2">
-            <p class="text-gray-400">Lima- Peru (51) 969 597 945</p>
+            <p class="text-gray-400">Lima, Peru (51) 969597945</p>
            <Link href="https:/www.creazone.pe"> <p class="text-gray-400 underline">www.creazone.pe</p></Link>
             <p class="text-gray-400">contacto@creazone.pe</p>
             <p class="text-gray-400">Copyright © 2023</p>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="grid p-2 pb-10 px-9">
-          <h3 className="text-1xl md:text-xl   text-gray-300 tracking-wider ">
+          <h3 className="text-1xl md:text-xl   text-gray-200 tracking-wider ">
             Acerca de POWERGYM
           </h3>
           <hr />
