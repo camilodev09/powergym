@@ -179,3 +179,18 @@ const Carrousel = () => {
 };
 
 export default Carrousel;
+
+
+    const formData = new FormData();
+    formData.append("username", e.target.username.value);
+    formData.append("lastname", e.target.lastname.value);
+    formData.append("phonenumber", e.target.phonenumber.value);
+    formData.append("email", e.target.email.value);
+    formData.append("message", e.target.message.value);
+
+    try {
+
+      const response = fetch("https://express-crz.onrender.com/contact",{
+        method: "POST",
+        body: formData
+      })

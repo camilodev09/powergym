@@ -1,8 +1,6 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
 
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
 
 const Formulary = () => {
   const [errMsg, setErrMsg] = useState("");
@@ -12,14 +10,31 @@ const Formulary = () => {
   const handleSend = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("username", e.target.username.value);
-    formData.append("lastname", e.target.lastname.value);
-    formData.append("phonenumber", e.target.phonenumber.value);
-    formData.append("email", e.target.email.value);
-    formData.append("message", e.target.message.value);
+
+    const username = e.target.username.value;
+    const lastname =  e.target.lastname.value;
+    const phonenumber = e.target.phonenumber.value;
+    const email =  e.target.email.value;
+    const message = e.target.message.value;
 
     try {
+
+      const response = await fetch("https://express-crz.onrender.com/contact",{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+         },
+        body: JSON.stringify({
+          username,
+          lastname,
+          phonenumber,
+          email,
+          message,
+
+        })
+      })
+      console.log(response);
+
       if (response.ok) {
         setSuccessMsg(
           `Thank you dear ${e.target.username.value}, Your Messages has been sent Successfully!`
