@@ -31,7 +31,9 @@ const Formulary = () => {
           email,
           message,
 
-        })
+        }),
+        credentials: 'include',
+
       })
       console.log(response);
 
