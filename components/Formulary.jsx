@@ -19,7 +19,7 @@ const Formulary = () => {
 
     try {
 
-      const response = await fetch("https://express-crz.onrender.com/contact",{
+      const response = await fetch("https://server-portfolio-beru.onrender.com/contact",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
