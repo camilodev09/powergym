@@ -32,7 +32,7 @@ const Formulary = () => {
           message,
 
         }),
-        credentials: 'include',
+      
 
       })
       console.log(response);
