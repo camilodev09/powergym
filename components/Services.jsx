@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <div className="bg-white pt-80 md:pt-14 mt-40 md:mt-20 pb-20 md:pb-40 xl:px-20 ">
+    <div className="bg-white pt-10 md:pt-14 mt-40 md:mt-20 pb-20 md:pb-40 xl:px-20 ">
       <h2 className="flex font-titleFont text-3xl md:text-4xl lg:text-4xl font-semibold md:font-bold text-gray-800 justify-center items-center text-center p-3 gap-1 md:mx-20 lgl:mx-16">
         ¿Buscas un lugar para mejorar tu salud y estado físico?
       </h2>
@@ -14,26 +14,14 @@ const Services = () => {
   
          {/*divide */}
         
-          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md">
+          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full">
 
-            <div className="hoover-hidden">
-              <Image
-                src="/assets/services2.png"
-                alt="My Image"
-                width={366}
-                height={200}
-                className="h-[230px]"
-               
-               />
-            </div>
-            <div className=" justify-center items-center hidden">
              <Image
                 src="/assets/services2.png"
                 alt="My Image"
                 width={366}
                 height={200}
                 className="h-[230px]"
-               
               />
             
              <span className="w-full pt-2 md:p-7 gap-2">
@@ -47,14 +35,13 @@ const Services = () => {
                 de masa muscular.¡Cuenta con nosotros!
               </p>
              </span>
-            </div> 
+            
+
           </div>
         
           {/*divide */}
-       
-
+    
           <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full">
-            
               <Image
                 src="/assets/services3.png"
                 alt="My Image"
@@ -74,13 +61,12 @@ const Services = () => {
                 clave para mantener una buena salud y un estado físico óptimo.
               </p>
             </span>
-          </div>
+           </div>
 
       
        {/*divide */}
        
           <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md">
-              
               <Image
                 src="/assets/services1.png"
                 alt="My Image"

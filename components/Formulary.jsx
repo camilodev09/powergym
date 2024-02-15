@@ -59,10 +59,10 @@ const Formulary = () => {
   };
 
   return (
-    <div className="  gap-4 p-4 rounded-lg items-center justify-center">
+    <div className="w-full px-4  gap-4 p-4 rounded-lg items-center justify-center">
       <form
         onSubmit={handleSend}
-        className=" flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
+        className="w-full flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
       >
         <h3 className=" pb-4 text-center font-titleFont font-semibold text-gray-800">
           ¡Contáctanos adquiere los mejores planes!

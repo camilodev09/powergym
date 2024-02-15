@@ -3,7 +3,7 @@ import Formulary from "./Formulary";
 
 const Banner = () => {
   return (
-    <div className="flex justify-between items-center bg-gray-950">
+    <div className="flex justify-between items-center bg-gray-950 ">
       <div className="flex flex-row  justify-center items-center">
 
         <div className="flex flex-col mdl:flex-row ">
@@ -35,11 +35,11 @@ const Banner = () => {
                 height={200}
               />
               <p className="text-white font-bodyFont text-sm md:text-1xl text-center font-semibold px-0  lg:mdl:px-20  mx-8  md:mx-20">
-              Alcanza tu maximo "prime" este invierno <br />
+              Alcanza tu máximo "prime" este invierno <br />
               </p>
               <p className="hidden md:flex text-white text-base md:text-1xl text-center">
                
-                Ven tenemos al mejor staff 
+                Ven tenemos el mejor staff 
                 <br />
               </p>
             </div>
@@ -52,6 +52,9 @@ const Banner = () => {
           </div>
 
         </div>
+        
+
+
       </div>
     </div>
   );
