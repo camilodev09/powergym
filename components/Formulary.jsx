@@ -95,7 +95,7 @@ const Formulary = () => {
               required
             />
           </div>
-          <div className="w-[45%] lgl:w-1/2 flex flex-col gap-1">
+          <div className="w-[47%] lgl:w-1/2 flex flex-col gap-1">
             <label
               className="text-sm text-gray-900  tracking-wide"
               htmlFor="lastname"
