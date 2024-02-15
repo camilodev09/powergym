@@ -2,8 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaPhone, FaUser } from "react-icons/fa";
 
+
 const Nav = () => {
+
+  
+
   return (
+   
     <div className="bg-gray-950 flex justify-between md:px-10 h-18 sticky top-0 z-50  w-full mx-auto  ">
       <div className="">
         <Link href={"/"}>
@@ -35,6 +40,8 @@ const Nav = () => {
         </Link>
       </div>
     </div>
+
+   
   );
 };
 

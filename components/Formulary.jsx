@@ -59,13 +59,13 @@ const Formulary = () => {
   };
 
   return (
-    <div className=" w[98%] md:w-full  gap-4 p-4 rounded-lg items-center justify-center">
+    <div className=" w[95%] md:w-full  gap-4 p-4 rounded-lg items-center justify-center">
       <form
         onSubmit={handleSend}
-        className="w-[98%] flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
+        className="w-[95%] flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
       >
-        <h3 className=" pb-4 text-center font-titleFont font-semibold text-yellow-300">
-          ¡Contactanos adquiere los mejores planes!
+        <h3 className=" pb-4 text-center font-titleFont font-semibold text-gray-800">
+          ¡Contáctanos adquiere los mejores planes!
         </h3>
         {errMsg && (
           <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
@@ -79,7 +79,7 @@ const Formulary = () => {
         )}
 
         <div className="flex flex-row gap-2">
-          <div className="w-full lgl:w-1/2 flex flex-col gap-1">
+          <div className="w-[50%] lgl:w-1/2 flex flex-col gap-1">
             <label
               className="text-sm text-gray-900  tracking-wide"
               htmlFor="username"
@@ -95,7 +95,7 @@ const Formulary = () => {
               required
             />
           </div>
-          <div className="w-full lgl:w-1/2 flex flex-col gap-1">
+          <div className="w-[48%] lgl:w-1/2 flex flex-col gap-1">
             <label
               className="text-sm text-gray-900  tracking-wide"
               htmlFor="lastname"

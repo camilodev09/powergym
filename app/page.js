@@ -2,6 +2,7 @@ import Banner from "@/components/Banner";
 import Carrousel from "@/components/Carrousel";
 import Footer from "@/components/Footer";
 import Form from "@/components/Form";
+import Gymvideo from "@/components/Gymvideo";
 
 import Services from "@/components/Services";
 import UseGym from "@/components/UseGym";
@@ -16,6 +17,7 @@ export default function Home() {
       <Banner />
       <Form />
       <Services />
+      <Gymvideo />
       <Carrousel />
       <UseGym/>
       <Footer />

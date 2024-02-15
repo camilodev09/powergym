@@ -15,8 +15,19 @@ const Services = () => {
          {/*divide */}
         
           <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md">
-            
+
+            <div className="hoover-hidden">
               <Image
+                src="/assets/services2.png"
+                alt="My Image"
+                width={366}
+                height={200}
+                className="h-[230px]"
+               
+               />
+            </div>
+            <div className=" justify-center items-center hidden">
+             <Image
                 src="/assets/services2.png"
                 alt="My Image"
                 width={366}
@@ -25,7 +36,7 @@ const Services = () => {
                
               />
             
-            <span className="w-full pt-2 md:p-7 gap-2">
+             <span className="w-full pt-2 md:p-7 gap-2">
               <h3 className="flex font-titleFont text-2xl md:text-3xl lg:text-3xl font-semibold md:font-bold text-gray-800 justify-center items-center text-center  gap-2 p-1  md:p-2">
                 Personal <span className="text-yellow-400"> calificado </span>
               </h3>
@@ -35,7 +46,8 @@ const Services = () => {
                 alcanzar tus objetivos.Desde la pérdida de peso hasta el aumento
                 de masa muscular.¡Cuenta con nosotros!
               </p>
-            </span>
+             </span>
+            </div> 
           </div>
         
           {/*divide */}
