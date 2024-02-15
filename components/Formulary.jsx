@@ -59,7 +59,7 @@ const Formulary = () => {
   };
 
   return (
-    <div className=" w[95%] md:w-full  gap-4 p-4 rounded-lg items-center justify-center">
+    <div className=" w-[95%] md:w-full  gap-4 p-4 rounded-lg items-center justify-center">
       <form
         onSubmit={handleSend}
         className="w-[95%] flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
