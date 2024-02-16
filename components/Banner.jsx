@@ -3,8 +3,10 @@ import Formulary from "./Formulary";
 
 const Banner = () => {
   return (
-    <div className="flex justify-between items-center bg-gray-950 "  data-aos="fade-down"  >
-      <div className="flex flex-row  justify-center items-center">
+    <div className="flex justify-between items-center bg-gray-950 "   >
+      <div className="flex flex-row  justify-center items-center "
+       data-aos="fade-down" 
+      >
 
         <div className="flex flex-col mdl:flex-row ">
 
