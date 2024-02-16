@@ -59,10 +59,11 @@ const Formulary = () => {
   };
 
   return (
-    <div className="w-full px-4  gap-4 p-4 rounded-lg items-center justify-center">
+    <div className="w-full px-4  gap-4 p-4 rounded-lg items-center justify-center"   >
       <form
         onSubmit={handleSend}
         className="w-full flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
+        data-aos="zoom-in"
       >
         <h3 className=" pb-4 text-center font-titleFont font-semibold text-gray-800">
           ¡Contáctanos adquiere los mejores planes!
@@ -157,7 +158,7 @@ const Formulary = () => {
             rows="2"
           ></textarea>
         </div>
-        <div className="w-full">
+        <div className="w-full" data-aos="zoom-in" >
           <button
             onSubmit={handleSend}
             className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-moradito border-transparent"

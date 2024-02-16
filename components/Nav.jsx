@@ -10,7 +10,7 @@ const Nav = () => {
   return (
    
     <div className="bg-gray-950 flex justify-between md:px-10 h-18 sticky top-0 z-50  w-full mx-auto  ">
-      <div className="">
+      <div className=""   data-aos="fade-right">
         <Link href={"/"}>
           <Image
             src="/assets/logoletratrue22.svg"
@@ -18,10 +18,13 @@ const Nav = () => {
             width={200}
             height={100}
             className="rounded-md pt-1"
+
           />
         </Link>
       </div>
-      <div className="flex gap-3 p-4">
+      <div className="flex gap-3 p-4"
+         data-aos="fade-left"
+      >
         <Link href="tel:+51966301171">
           <span>
             <FaPhone

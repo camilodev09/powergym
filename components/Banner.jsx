@@ -3,7 +3,7 @@ import Formulary from "./Formulary";
 
 const Banner = () => {
   return (
-    <div className="flex justify-between items-center bg-gray-950 ">
+    <div className="flex justify-between items-center bg-gray-950 "  data-aos="fade-down"  >
       <div className="flex flex-row  justify-center items-center">
 
         <div className="flex flex-col mdl:flex-row ">
@@ -11,7 +11,7 @@ const Banner = () => {
          {/*bloque1 */}
           <div className="flex flex-row">
             <div className=" flex  justify-start    md:justify-center items-start">
-              <div className="md:hidden xl:flex flex-row">
+              <div className="md:hidden xl:flex flex-row" data-aos="fade-right" >
                 <img
                   src="/assets/muscle1.png"
                   alt="My Image"
@@ -33,6 +33,7 @@ const Banner = () => {
                 alt="My Image"
                 width={456}
                 height={200}
+                data-aos="zoom-in"
               />
               <p className="text-white font-bodyFont text-sm md:text-1xl text-center font-semibold px-0  lg:mdl:px-20  mx-8  md:mx-20">
               Alcanza tu máximo "prime" este invierno <br />

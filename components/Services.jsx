@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <div className="bg-white pt-10 md:pt-14 mt-40 md:mt-20 pb-20 md:pb-40 xl:px-20 ">
+    <div className="bg-white pt-10 md:pt-14 mt-40 md:mt-20 pb-20 md:pb-40 xl:px-20 " data-aos="zoom-in">
       <h2 className="flex font-titleFont text-3xl md:text-4xl lg:text-4xl font-semibold md:font-bold text-gray-800 justify-center items-center text-center p-3 gap-1 md:mx-20 lgl:mx-16">
         ¿Buscas un lugar para mejorar tu salud y estado físico?
       </h2>
-      <h3 className="flex font-titleFont text-2xl md:text-3xl lg:text-4xl font-semibold md:font-bold text-yellow-400 justify-center items-center text-center lgl:mx-16">
+      <h3 className="flex font-titleFont text-2xl md:text-3xl lg:text-4xl font-semibold md:font-bold text-yellow-400 justify-center items-center text-center lgl:mx-16" data-aos="fade-up">
         ¡No busques más!
       </h3>
 
@@ -14,7 +14,9 @@ const Services = () => {
   
          {/*divide */}
         
-          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full">
+          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full"
+          data-aos="fade-up"
+          >
 
              <Image
                 src="/assets/services2.png"
@@ -41,7 +43,9 @@ const Services = () => {
         
           {/*divide */}
     
-          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full">
+          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md w-full" 
+           data-aos="fade-up"
+          >
               <Image
                 src="/assets/services3.png"
                 alt="My Image"
@@ -66,7 +70,9 @@ const Services = () => {
       
        {/*divide */}
        
-          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md">
+          <div className="flex flex-col mdl:flex-row xl:flex-col  justify-center items-center bg-gray-100 p-1 md:p-4 lgl:pt-3 rounded-md"
+           data-aos="fade-up"
+          >
               <Image
                 src="/assets/services1.png"
                 alt="My Image"

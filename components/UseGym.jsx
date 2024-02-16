@@ -8,13 +8,17 @@ const UseGym = () => {
   return (
     <div className="bg-[#040303] grid grid-cols-1  xl:grid-cols-1 pt-20 lg:pt-40 justify-center items-center  w-full   md:px-20 lg:px-40  pb-40">
      
-      <div className="bg-gradient-to-t from-[#040303] via-[#181a1c] to-[#171818]     pb-4 md:pb-10">
+      <div className="bg-gradient-to-t from-[#040303] via-[#181a1c] to-[#171818]     pb-4 md:pb-10" 
+       data-aos="fade-up"
+      >
         
          <div className=" items-center justify-center w-full grid">
             
          
 
-           <h2 className="px-6 flex font-titleFont text-3xl md:text-4xl lg:text-3xl lgl:text-6xl font-semibold md:font-bold  justify-center items-center  text-center pt-20 pb-10 w-full  bg-gradient-to-l from-red-500 via-red-500 to-yellow-400 text-transparent bg-clip-text">
+           <h2 className="px-6 flex font-titleFont text-3xl md:text-4xl lg:text-3xl lgl:text-6xl font-semibold md:font-bold  justify-center items-center  text-center pt-20 pb-10 w-full  bg-gradient-to-l from-red-500 via-red-500 to-yellow-400 text-transparent bg-clip-text"
+             data-aos="zoom-in"
+           >
             ¡Es momento de ponernos en forma,
             alista la silueta para el verano!
            </h2>

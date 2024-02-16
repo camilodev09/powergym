@@ -110,7 +110,7 @@ const Carrousel = () => {
 
   return (
     <div className="pt-16  pb-12 md:pb-40 bg-gray-50  lg:px-20">
-      <h1 className="text-2xl md:text-4xl  text-gray-800 py-5 font-titleFont font-extrabold  w-30 md:w-100 text-center rounded-sm p-1 md:p-7 pb-10 mb-10">
+      <h1 className="text-2xl md:text-4xl  text-gray-800 py-5 font-titleFont font-extrabold  w-30 md:w-100 text-center rounded-sm p-1 md:p-7 pb-10 mb-10"  data-aos="zoom-in">
         ¡Ellos ya comenzarón a lograr sus objetivos!
       </h1>
       <Slider {...settings} className="pt-8 ">
@@ -119,6 +119,7 @@ const Carrousel = () => {
             className=" rounded-lg object-cover "
             src="/assets/testim1.png"
             alt="imgSlider2"
+            data-aos="flip-left"
           />
           <h3 className="text-center text-2xl text-gray-800 font-medium font-titleFont ">
             Juana Salinas
@@ -135,6 +136,7 @@ const Carrousel = () => {
             className="rounded-lg object-cover"
             src="/assets/testim2.png"
             alt="imgSlider3"
+            data-aos="flip-left"
           />
           <h3 className="text-center text-2xl text-gray-800 font-medium font-titleFont">
             Anita Correa
@@ -151,6 +153,7 @@ const Carrousel = () => {
             className="rounded-lg object-cover"
             src="/assets/testim3.png"
             alt="imgSlider3"
+            data-aos="flip-left"
           />
 
           <h3 className="text-center text-2xl text-gray-800 font-medium font-titleFont">
