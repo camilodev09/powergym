@@ -14,7 +14,7 @@ const Footer = () => {
             src="/assets/logoletratrue22.svg"
             alt="imgSlider3"
           />
-          <span class="px-2">
+          <span class="px-2 text-xs  md:text-sm" >
             <p class="text-gray-400">Lima, Perú (+51) 966301171</p>
            <Link href="https:/www.creazone.pe"> <p class="text-gray-400 underline">www.creazone.pe</p></Link>
             <p class="text-gray-400">contacto@creazone.pe</p>
@@ -45,25 +45,25 @@ const Footer = () => {
           </div>
         </div>
         <div className="grid p-2 pb-10 px-9">
-          <h3 className="text-1xl md:text-xl   text-gray-200 tracking-wider ">
+          <h3 className="text-sm    text-gray-200 tracking-wider ">
             Acerca de POWERGYM
           </h3>
           <hr />
-          <ul className="  flex flex-col gap-4 font-titleFont font-medium  py-0  overflow-hidden py-30">
+          <ul className="  flex flex-col gap-2 font-titleFont font-medium  py-0  overflow-hidden py-30 text-xs md:text-sm ">
             <li>
-              <span className="w-full text-xs md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full relative hover:text-yellow-300 duration-300 group cursor-pointer mb-2">
                 Necesito mas información
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
             </li>
             <li>
-              <span className="w-full text-xs md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full relative hover:text-yellow-300 duration-300 group cursor-pointer">
                 ¿Necesito una membresía Premium?
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
             </li>
             <li>
-              <span className="w-full text-xs md:text-base relative hover:text-yellow-300 duration-300 group cursor-pointer">
+              <span className="w-full  relative hover:text-yellow-300 duration-300 group cursor-pointer">
                 ¿Necesitas el servicio completo?
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>
