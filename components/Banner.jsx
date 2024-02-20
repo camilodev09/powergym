@@ -37,7 +37,7 @@ const Banner = () => {
                 height={200}
                 data-aos="zoom-in"
               />
-              <p className="text-white font-bodyFont text-sm md:text-1xl text-center font-semibold px-0  lg:mdl:px-20  mx-8  md:mx-20">
+              <p className="text-white font-bodyFont text-xs md:text-1xl text-center  font-normal md:font-semibold px-0  lg:mdl:px-20  mx-8  md:mx-20">
               Alcanza tu máximo "prime" este invierno <br />
               </p>
               <p className="hidden md:flex text-white text-base md:text-1xl text-center">

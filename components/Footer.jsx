@@ -51,7 +51,7 @@ const Footer = () => {
           <hr />
           <ul className="  flex flex-col gap-2 font-titleFont font-medium  py-0  overflow-hidden py-30 text-xs md:text-sm ">
             <li>
-              <span className="w-full relative hover:text-yellow-300 duration-300 group cursor-pointer mb-2">
+              <span className="w-full relative hover:text-yellow-300 duration-300 group cursor-pointer ">
                 Necesito mas información
                 <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
               </span>

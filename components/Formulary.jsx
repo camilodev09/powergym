@@ -14,7 +14,7 @@ const Formulary = () => {
     const username = e.target.username.value;
     const lastname =  e.target.lastname.value;
     const phonenumber = e.target.phonenumber.value;
-    const email =  e.target.email.value;
+    const email =  e.target.email.value;  
     const message = e.target.message.value;
 
     try {
@@ -39,7 +39,7 @@ const Formulary = () => {
 
       if (response.ok) {
         setSuccessMsg(
-          `Thank you dear ${e.target.username.value}, Your Messages has been sent Successfully!`
+          `Gracias${e.target.username.value}, tu mensaje ha sido enviado!`
         );
         setErrMsg("");
         e.target.reset();
@@ -91,7 +91,7 @@ const Formulary = () => {
               name="username"
               className={`${
                 errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100 rounded-md py-2`}
+              } bg-gray-100   rounded-md py-2 px-2 text-gray-700`}
               type="text"
               required
             />
@@ -107,7 +107,7 @@ const Formulary = () => {
               name="lastname"
               className={`${
                 errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100 rounded-md py-2 `}
+              } bg-gray-100 rounded-md py-2 px-2 text-gray-700`}
               type="text"
               required
             />
@@ -125,7 +125,7 @@ const Formulary = () => {
             name="phonenumber"
             className={`${
               errMsg === "Phone number is required!" && "outline-designColor"
-            } bg-gray-100 rounded-md py-2`}
+            } bg-gray-100 rounded-md py-2 px-2 text-gray-700 `}
             type="text"
             required
           />
@@ -142,7 +142,7 @@ const Formulary = () => {
             name="email"
             className={`${
               errMsg === "Please give your Email!" && "outline-moradito"
-            } bg-gray-100 rounded-md py-2`}
+            } bg-gray-100 rounded-md py-2 px-2 text-gray-700  `}
             type="email"
             required
           />
@@ -153,12 +153,12 @@ const Formulary = () => {
             name="message"
             className={`${
               errMsg === "Message is required!" && "outline-lightText"
-            } bg-gray-100 rounded-md py-2`}
+            } bg-gray-100 rounded-md py-2 px-2 text-gray-700  `}
             cols="30"
             rows="2"
           ></textarea>
         </div>
-        <div className="w-full" data-aos="zoom-in" >
+        <div className="w-full" >
           <button
             onSubmit={handleSend}
             className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-moradito border-transparent"
