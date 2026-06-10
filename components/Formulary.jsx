@@ -1,169 +1,175 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Formulary = () => {
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
-  const [showSuccessMsg, setShowSuccessMsg] = useState(false); // Nuevo estado
+  const [isLoading, setIsLoading] = useState(false);
+  const msgRef = useRef(null);
+
+  // Animación de aparición para los mensajes de alerta
+  useGSAP(() => {
+    if (errMsg || successMsg) {
+      gsap.fromTo(
+        msgRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+      );
+    }
+  }, [errMsg, successMsg]);
 
   const handleSend = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
+    setErrMsg("");
+    setSuccessMsg("");
 
     const username = e.target.username.value;
-    const lastname =  e.target.lastname.value;
+    const lastname = e.target.lastname.value;
     const phonenumber = e.target.phonenumber.value;
-    const email =  e.target.email.value;  
+    const email = e.target.email.value;  
     const message = e.target.message.value;
 
     try {
-
-      const response = await fetch("https://server-portfolio-beru.onrender.com/contact",{
+      const response = await fetch("https://server-portfolio-beru.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
-         },
+        },
         body: JSON.stringify({
           username,
           lastname,
           phonenumber,
           email,
           message,
-
         }),
-      
-
-      })
-      console.log(response);
+      });
 
       if (response.ok) {
-        setSuccessMsg(
-          `Gracias${e.target.username.value}, tu mensaje ha sido enviado!`
-        );
-        setErrMsg("");
+        setSuccessMsg(`¡Gracias ${username}, tu solicitud está en camino!`);
         e.target.reset();
-        setShowSuccessMsg(true);
-
+        
         setTimeout(() => {
-          setShowSuccessMsg(false);
-          setSuccessMsg(""); // Limpiar el mensaje de éxito después de desaparecer
+          setSuccessMsg("");
         }, 5000);
       } else {
-        throw new Error("Something went wrong with the request.");
+        throw new Error("Ocurrió un error al enviar. Intenta de nuevo.");
       }
     } catch (error) {
-      setErrMsg(error.message);
-      setSuccessMsg("");
+      setErrMsg(error.message || "Error de conexión. Revisa tu red.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
+  // Clases reutilizables para mantener consistencia en los inputs
+  const inputStyles = "w-full bg-[#0A0A0A] border border-white/10 rounded-[4px] py-3 px-4 text-[#FFFFFF] placeholder:text-[#A3A3A3]/40 focus:outline-none focus:border-[#CCFF00] focus:ring-1 focus:ring-[#CCFF00] transition-all duration-300";
+  const labelStyles = "block text-xs font-semibold text-[#A3A3A3] uppercase tracking-wider mb-1.5";
+
   return (
-    <div className="w-full px-4  gap-4 p-4 rounded-lg items-center justify-center"   >
+    // CONTENEDOR AUTÓNOMO: Añadido px-6 (móvil) y md:p-10 (desktop). Fondo y bordes incluidos.
+    <div className="w-full max-w-xl mx-auto bg-[#141414] px-6 py-8 md:p-10 rounded-2xl border border-white/5 transition-all duration-500 focus-within:border-[#CCFF00]/50 focus-within:shadow-[0_0_25px_rgba(204,255,0,0.05)]">
       <form
         onSubmit={handleSend}
-        className="w-full flex flex-col gap-3 lgl:gap-6 py-2 lgl:py-5 bg-white p-4 rounded-md shadow-todoShodow pt-8 md:pt-0 shadow-shadowOne"
-        data-aos="zoom-in"
+        className="w-full flex flex-col gap-5"
       >
-        <h3 className=" pb-4 text-center font-titleFont font-semibold text-gray-800">
-          ¡Contáctanos adquiere los mejores planes!
-        </h3>
-        {errMsg && (
-          <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
-            {errMsg}
-          </p>
-        )}
-        {successMsg && (
-          <p className="py-3 bg-gray-300 shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
-            {successMsg}
-          </p>
+        <div className="text-center mb-2">
+          <h3 className="font-titleFont text-2xl md:text-3xl font-bold text-[#FFFFFF] uppercase tracking-tight">
+            Asegura tu <span className="text-[#CCFF00]">Lugar</span>
+          </h3>
+          <p className="text-[#A3A3A3] text-sm mt-1">Completa tus datos y un asesor te contactará de inmediato.</p>
+        </div>
+
+        {/* Notificaciones de Éxito / Error */}
+        {(errMsg || successMsg) && (
+          <div 
+            ref={msgRef}
+            className={`py-3 px-4 rounded-[4px] text-center text-sm font-medium tracking-wide ${
+              errMsg 
+                ? "bg-red-500/10 border border-red-500/50 text-red-400" 
+                : "bg-[#CCFF00]/10 border border-[#CCFF00]/50 text-[#CCFF00]"
+            }`}
+          >
+            {errMsg || successMsg}
+          </div>
         )}
 
-        <div className="flex flex-row gap-2">
-          <div className="w-[50%] lgl:w-1/2 flex flex-col gap-1">
-            <label
-              className="text-sm text-gray-900  tracking-wide"
-              htmlFor="username"
-            >
-              Nombre*
-            </label>
+        {/* Fila: Nombre y Apellido */}
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-1/2 flex flex-col">
+            <label className={labelStyles} htmlFor="username">Nombre</label>
             <input
               name="username"
-              className={`${
-                errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100   rounded-md py-2 px-2 text-gray-700`}
+              className={inputStyles}
               type="text"
+              placeholder="Ej. Carlos"
               required
+              disabled={isLoading}
             />
           </div>
-          <div className="w-[47%] lgl:w-1/2 flex flex-col gap-1">
-            <label
-              className="text-sm text-gray-900  tracking-wide"
-              htmlFor="lastname"
-            >
-              Apellido*
-            </label>
+          <div className="w-full md:w-1/2 flex flex-col">
+            <label className={labelStyles} htmlFor="lastname">Apellido</label>
             <input
               name="lastname"
-              className={`${
-                errMsg === "Username is required!" && "outline-moradito"
-              } bg-gray-100 rounded-md py-2 px-2 text-gray-700`}
+              className={inputStyles}
               type="text"
+              placeholder="Ej. Mendoza"
               required
+              disabled={isLoading}
             />
           </div>
         </div>
 
-        <div className="w-full  flex flex-col gap-1">
-          <label
-            className="text-sm text-gray-900  tracking-wide"
-            htmlFor="phonenumber"
-          >
-            Celular*
-          </label>
+        {/* Fila: Celular */}
+        <div className="w-full flex flex-col">
+          <label className={labelStyles} htmlFor="phonenumber">Celular</label>
           <input
             name="phonenumber"
-            className={`${
-              errMsg === "Phone number is required!" && "outline-designColor"
-            } bg-gray-100 rounded-md py-2 px-2 text-gray-700 `}
-            type="text"
+            className={inputStyles}
+            type="tel"
+            placeholder="+1 234 567 8900"
             required
+            disabled={isLoading}
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label
-            className="text-sm text-gray-900 tracking-wide"
-            htmlFor="email"
-          >
-            Email*
-          </label>
+        {/* Fila: Email */}
+        <div className="w-full flex flex-col">
+          <label className={labelStyles} htmlFor="email">Email</label>
           <input
             name="email"
-            className={`${
-              errMsg === "Please give your Email!" && "outline-moradito"
-            } bg-gray-100 rounded-md py-2 px-2 text-gray-700  `}
+            className={inputStyles}
             type="email"
+            placeholder="tu@correo.com"
             required
+            disabled={isLoading}
           />
         </div>
-        <div className="flex flex-col gap-1">
-          <p className="text-sm text-gray-900  tracking-wide">Mensaje*</p>
+
+        {/* Fila: Mensaje */}
+        <div className="w-full flex flex-col">
+          <label className={labelStyles} htmlFor="message">¿Cuáles son tus objetivos?</label>
           <textarea
             name="message"
-            className={`${
-              errMsg === "Message is required!" && "outline-lightText"
-            } bg-gray-100 rounded-md py-2 px-2 text-gray-700  `}
-            cols="30"
-            rows="2"
+            className={`${inputStyles} resize-none`}
+            rows="3"
+            placeholder="Quiero aumentar masa muscular, bajar de peso..."
+            required
+            disabled={isLoading}
           ></textarea>
         </div>
-        <div className="w-full" >
+
+        {/* Botón de Submit */}
+        <div className="w-full mt-2">
           <button
-            onSubmit={handleSend}
-            className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-moradito border-transparent"
+            type="submit"
+            disabled={isLoading}
+            className="w-full h-14 bg-[#CCFF00] text-[#0A0A0A] font-titleFont font-black text-lg md:text-xl uppercase tracking-widest rounded-[4px] hover:bg-[#d4ff33] hover:shadow-[0_0_25px_rgba(204,255,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
           >
-            Contactar Ahora
+            {isLoading ? "Procesando..." : "Contactar Ahora"}
           </button>
         </div>
       </form>
