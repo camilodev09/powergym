@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Formulary from "./Formulary";
 
-// Setup GSAP Plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(useGSAP);
 }
@@ -15,7 +14,7 @@ const Banner = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // 1. Animación Fade-Up progresiva para los textos y assets
+    // 1. Textos: Fade-up
     gsap.fromTo(
       ".hero-reveal",
       { y: 30, opacity: 0 },
@@ -25,17 +24,17 @@ const Banner = () => {
         duration: 0.8, 
         stagger: 0.15, 
         ease: "power3.out",
-        delay: 0.1
+        delay: 0.2
       }
     );
 
-    // 2. Animación Zoom-out lenta para dar sensación de peso a la imagen
+    // 2. Imagen: Zoom-out muy sutil para no desestabilizar el encuadre
     gsap.fromTo(
       ".hero-img",
-      { scale: 1.05 },
+      { scale: 1.05 }, 
       { 
         scale: 1, 
-        duration: 1.5, 
+        duration: 2, 
         ease: "power2.out" 
       }
     );
@@ -44,32 +43,42 @@ const Banner = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative flex flex-col lg:flex-row w-full bg-[#0A0A0A] min-h-screen overflow-hidden"
+      // 🛠️ CORRECCIÓN CRÍTICA: Cambiamos pt-20 por mt-20.
+      // Esto empuja todo el bloque debajo del navbar (que mide h-20),
+      // asegurando que la cabeza del atleta no se esconda bajo el menú.
+      className="relative w-full min-h-[calc(100vh-80px)] flex flex-col lg:flex-row bg-black overflow-hidden mt-20"
     >
       {/* =========================================
-          BLOQUE IZQUIERDO: NARRATIVA & ESTADO (55%)
+          CAPA 0: IMAGEN DE FONDO
           ========================================= */}
-      <div className="relative lg:w-[55%] flex flex-col justify-center px-6 md:px-12 pt-12 pb-8 lg:py-24 z-10 flex-grow">
+      <div className="absolute top-0 left-0 w-full h-[60vh] lg:h-full lg:w-[65%] z-0 overflow-hidden">
+        <Image
+          src="/assets/muscle1.png"
+          alt="Atleta en su Prime"
+          fill
+          priority
+          /* Ajuste de encuadre: 
+             object-top asegura que el recorte respete la parte superior (la cabeza).
+             lg:object-[75%_top] la mueve un poco a la derecha en desktop para centrar el rostro.
+          */
+          className="hero-img object-cover object-top lg:object-[75%_top] grayscale-[20%] contrast-125"
+        />
         
-        {/* Imagen de Fondo (Desktop: Absolute / Mobile: Inline por orden) */}
-        <div className="order-3 lg:order-none relative w-full h-[350px] lg:h-auto lg:absolute lg:inset-0 z-[-1] mt-8 lg:mt-0 overflow-hidden">
-          <Image
-            src="/assets/muscle1.png"
-            alt="Atleta en su Prime"
-            fill
-            priority
-            className="hero-img object-cover object-top lg:object-center grayscale-[20%] contrast-125"
-          />
-          {/* Gradientes para fusionar la imagen con el fondo #0A0A0A */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent lg:bg-gradient-to-r lg:from-[#0A0A0A]/60 lg:via-[#0A0A0A]/80 lg:to-[#0A0A0A]" />
-        </div>
+        {/* Gradientes oscuros para la fusión con el fondo */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black lg:bg-gradient-to-r lg:from-black/20 lg:via-black/60 lg:to-black" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent lg:hidden" />
+      </div>
 
-        {/* Contenedor de Contenido (Flex Order maneja la estructura Mobile vs Desktop) */}
-        <div className="flex flex-col z-10 lg:pl-8">
+      {/* =========================================
+          CAPA 1: CONTENIDO (FLEXBOX)
+          ========================================= */}
+      <div className="relative z-10 flex flex-col lg:flex-row w-full h-full flex-grow">
+        
+        {/* BLOQUE IZQUIERDO: Textos (55%) */}
+        <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 md:px-12 py-12 lg:py-24">
           
-          {/* Badge 50% */}
-          <div className="hero-reveal order-2 lg:order-1 mb-6 lg:mb-8 flex justify-center lg:justify-start">
-            <div className="relative w-[280px] h-[100px] lg:w-[350px] lg:h-[130px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+          <div className="hero-reveal mb-6 lg:mb-8 flex justify-center lg:justify-start">
+            <div className="relative w-[260px] h-[90px] lg:w-[320px] lg:h-[110px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
               <Image
                 src="/assets/501.png"
                 alt="50% de Descuento"
@@ -80,43 +89,35 @@ const Banner = () => {
             </div>
           </div>
 
-          {/* Título Desktop (H1) */}
-          <h1 className="hero-reveal hidden lg:block order-2 text-6xl lg:text-7xl font-titleFont font-black uppercase text-[#FFFFFF] mb-8 leading-[1.05] tracking-tight">
+          <h1 className="hero-reveal hidden lg:block text-6xl lg:text-[4.5rem] font-titleFont font-black uppercase text-white mb-6 leading-[1.05] tracking-tight drop-shadow-2xl">
             ¡No te pierdas este <br />
             <span className="text-[#CCFF00]">super descuento!</span>
           </h1>
 
-          {/* Título Mobile (H2) */}
-          <h2 className="hero-reveal lg:hidden order-1 text-4xl text-center font-titleFont font-black uppercase text-[#FFFFFF] mb-4 leading-tight tracking-tight">
+          <h2 className="hero-reveal lg:hidden text-4xl text-center font-titleFont font-black uppercase text-white mb-4 leading-tight tracking-tight drop-shadow-xl">
             ¡No te lo <br />
             <span className="text-[#CCFF00]">pierdas!</span>
           </h2>
 
-          {/* Textos de Apoyo */}
-          <div className="hero-reveal order-4 lg:order-3 text-center lg:text-left mt-6 lg:mt-0">
-            <p className="font-bodyFont text-lg md:text-2xl font-medium text-[#FFFFFF] mb-2 tracking-wide">
+          <div className="hero-reveal text-center lg:text-left mt-4 lg:mt-0">
+            <p className="font-bodyFont text-lg md:text-xl font-semibold text-white mb-1 tracking-wide drop-shadow-md">
               Alcanza tu máximo "prime" este invierno.
             </p>
-            <p className="font-bodyFont text-base md:text-lg text-[#A3A3A3] font-light">
+            <p className="font-bodyFont text-sm md:text-base text-gray-300 font-light drop-shadow-md">
               Ven, tenemos el mejor staff.
             </p>
           </div>
 
         </div>
-      </div>
 
-      {/* =========================================
-          BLOQUE DERECHO: INTENCIÓN & ACCIÓN (45%)
-          ========================================= */}
-      <div className="lg:w-[45%] flex flex-col justify-center items-center p-6 md:p-12 z-10 bg-[#0A0A0A]">
-        
-        {/* Contenedor del Formulario con Micro-interacción (Glow on Focus) */}
-        <div className="hidden md:flex hero-reveal  w-full max-w-md bg-[#141414] p-8 md:p-10 rounded-2xl border border-white/5 transition-all duration-500 focus-within:border-[#CCFF00] focus-within:shadow-[0_0_25px_rgba(204,255,0,0.1)]">
-          <Formulary />
+        {/* BLOQUE DERECHO: Formulario (45%) */}
+        <div className="w-full lg:w-[45%] flex flex-col justify-center items-center px-6 md:px-12 pb-12 lg:py-24">
+          <div className="hero-reveal w-full max-w-md">
+            <Formulary />
+          </div>
         </div>
-        
-      </div>
 
+      </div>
     </section>
   );
 };
