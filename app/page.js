@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="">
       <Banner />
-      <Form />
+      
       <Services />
       <Gymvideo />
       <Carrousel />

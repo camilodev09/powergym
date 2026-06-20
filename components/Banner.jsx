@@ -111,7 +111,7 @@ const Banner = () => {
         </div>
 
         {/* BLOQUE DERECHO: Formulario (45%) */}
-        <div className="w-full lg:w-[45%] flex flex-col justify-center items-center px-6 md:px-12 pb-12 lg:py-24">
+        <div className="w-full lg:w-[45%]   md:flex flex-col justify-center items-center px-6 md:px-12 pb-12 lg:py-24">
           <div className="hero-reveal w-full max-w-md">
             <Formulary />
           </div>
